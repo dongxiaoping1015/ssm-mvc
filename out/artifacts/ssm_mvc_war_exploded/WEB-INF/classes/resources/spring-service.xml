@@ -11,8 +11,11 @@
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <!--注册Service-->
-    <bean id="studentService" class="dong.service.StudentServiceImpl">
-        <property name="dao" ref="IStudentDao" />
-    </bean>
+    <!--注册组件扫描器,注意,不能与SpringMVC的组件扫描器进行合并-->
+    <context:component-scan base-package="dong.service" />
+
+    <!--&lt;!&ndash;注册Service&ndash;&gt;-->
+    <!--<bean id="studentService" class="dong.service.StudentServiceImpl">-->
+        <!--<property name="dao" ref="IStudentDao" />-->
+    <!--</bean>-->
 </beans>

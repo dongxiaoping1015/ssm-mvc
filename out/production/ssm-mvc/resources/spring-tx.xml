@@ -17,14 +17,17 @@
         <property name="dataSource" ref="dataSource" />
     </bean>
 
-    <tx:advice id="txAdvice" transaction-manager="transactionManager">
-        <tx:attributes>
-            <tx:method name="insert*" isolation="DEFAULT" propagation="REQUIRED"/>
-        </tx:attributes>
-    </tx:advice>
+    <!--事务注解驱动-->
+    <tx:annotation-driven transaction-manager="transactionManager" />
 
-    <aop:config>
-        <aop:pointcut id="studentPointcut" expression="execution(* *..service.*.*(..))"/>
-        <aop:advisor advice-ref="txAdvice" pointcut-ref="studentPointcut" />
-    </aop:config>
+    <!--<tx:advice id="txAdvice" transaction-manager="transactionManager">-->
+        <!--<tx:attributes>-->
+            <!--<tx:method name="insert*" isolation="DEFAULT" propagation="REQUIRED"/>-->
+        <!--</tx:attributes>-->
+    <!--</tx:advice>-->
+
+    <!--<aop:config>-->
+        <!--<aop:pointcut id="studentPointcut" expression="execution(* *..service.*.*(..))"/>-->
+        <!--<aop:advisor advice-ref="txAdvice" pointcut-ref="studentPointcut" />-->
+    <!--</aop:config>-->
 </beans>
