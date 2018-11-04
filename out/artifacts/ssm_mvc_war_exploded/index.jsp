@@ -11,7 +11,7 @@
     <title>$Title$</title>
   </head>
   <body>
-    <form action="/student.do">
+    <form action="/test/register.do">
         <input type="text" name="name" />
         <input type="text" name="age" />
         <input type="submit" value="go">
